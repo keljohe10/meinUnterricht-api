@@ -1,0 +1,38 @@
+version: '3.5'
+
+networks:
+  api:
+    name: meinunterricht
+    driver: bridge
+    external: true
+  apiInternal:
+
+services:
+  db:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_MULTIPLE_DATABASES: node_template_development
+    volumes:
+      - ./pg-init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - 5433:5432
+    networks:
+      - apiInternal
+
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile.local
+    volumes:
+      - $PWD:/app/
+      - /app/node_modules
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    networks:
+      - api
+      - apiInternal
+    depends_on:
+      - db
