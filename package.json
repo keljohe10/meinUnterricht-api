@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "nodemon --inspect src",
     "lint": "eslint .",
-    "test": "knex migrate:latest --env test && jest --runInBand --config=jest.config.js",
-    "test:related": "bash ./bin/task test"
+    "test": "knex migrate:latest --env test && jest --runInBand --config=jest.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,8 +24,7 @@
     "koa-qs": "^3.0.0",
     "objection": "^3.0.1",
     "pg": "^8.7.3",
-    "pino": "^7.9.2",
-    "randomatic": "^3.1.1"
+    "pino": "^7.9.2"
   },
   "devDependencies": {
     "bdd-lazy-var": "^2.6.1",
@@ -35,14 +33,12 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "inflection": "^1.13.2",
     "jest": "^26.6.3",
     "moment": "^2.29.1",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "pino-pretty": "^7.6.0",
     "prettier": "^2.6.1",
-    "qs": "^6.10.3",
     "supertest": "^6.2.3"
   }
 }

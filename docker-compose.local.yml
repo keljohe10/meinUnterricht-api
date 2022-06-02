@@ -12,7 +12,7 @@ services:
     image: postgres:12-alpine
     environment:
       POSTGRES_PASSWORD: password
-      POSTGRES_MULTIPLE_DATABASES: node_template_development
+      POSTGRES_MULTIPLE_DATABASES: node_template_development, node_template_test
     volumes:
       - ./pg-init-scripts:/docker-entrypoint-initdb.d
     ports:

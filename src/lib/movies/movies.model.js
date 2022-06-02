@@ -7,12 +7,11 @@ class Movie extends Model {
 
   static get modifiers() {
     return {
-      search(builder, search) {
-        const searchToUpperCase = search.toUpperCase();
+      search(builder, text) {
         builder.where((bd) => {
-          bd.whereRaw(`UPPER(title) LIKE ?`, [`%${searchToUpperCase}%`])
-            .orWhereRaw(`UPPER(plot) LIKE ?`, [`%${searchToUpperCase}%`])
-            .orWhereRaw(`UPPER(director) LIKE ?`, [`%${searchToUpperCase}%`]);
+          bd.whereRaw(`UPPER(title) LIKE ?`, [`%${text}%`])
+            .orWhereRaw(`UPPER(plot) LIKE ?`, [`%${text}%`])
+            .orWhereRaw(`UPPER(director) LIKE ?`, [`%${text}%`]);
         });
       },
     };

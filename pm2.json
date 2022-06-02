@@ -1,5 +1,0 @@
-{
-  "name": "node=rest-template",
-  "script": "src/index.js",
-  "instances": "max"
-}

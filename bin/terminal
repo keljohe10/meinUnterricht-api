@@ -3,16 +3,6 @@
 CONFIG=.env
 ENV_ARG=
 
-function usage {
-  echo "Usage: bin/terminal"
-  echo ""
-  echo "Options:"
-  echo ""
-  echo "  --release  start the project in production mode"
-  echo "  --help     display help information"
-  echo ""
-}
-
 function check_docker {
   docker -v > /dev/null 2>&1
 
@@ -39,18 +29,7 @@ function terminal {
   docker-compose $ENV_ARG exec api /bin/sh
 }
 
-# Process user flags
-
-if [[ "$@" =~ --help ]]; then
-  usage
-  exit 0
-fi
-
-if [[ "$@" =~ --release ]]; then
-  ENV_ARG="-f docker-compose.release.yml"
-else
-  ENV_ARG="-f docker-compose.local.yml"
-fi
+ENV_ARG="-f docker-compose.local.yml"
 
 # Check dependencies
 

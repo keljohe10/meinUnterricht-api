@@ -3,19 +3,6 @@
 CONFIG=.env
 ENV_ARG=
 
-function usage {
-  echo "Usage: bin/start [OPTIONS]"
-  echo ""
-  echo "Options:"
-  echo ""
-  echo "  --release  start the project in production mode"
-  echo "  --help     display help information"
-  echo ""
-  echo "Note:"
-  echo ""
-  echo "By default it going to copy base configurations to try to start the project."
-}
-
 function check_base_config {
   if [ ! -f $CONFIG ]; then
     echo "$(tput setaf 2)Creating configuration file $(tput setaf 9)"
@@ -52,18 +39,7 @@ function up {
   docker-compose $ENV_ARG up --build --remove-orphans
 }
 
-# Process user flags
-
-if [[ "$@" =~ --help ]]; then
-  usage
-  exit 0
-fi
-
-if [[ "$@" =~ --release ]]; then
-  ENV_ARG="-f docker-compose.release.yml"
-else
-  ENV_ARG="-f docker-compose.local.yml"
-fi
+ENV_ARG="-f docker-compose.local.yml"
 
 # Check configurations
 

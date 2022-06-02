@@ -17,4 +17,5 @@ const makeConfig = (enviroment) => ({
 
 module.exports = {
   development: makeConfig('development'),
+  test: makeConfig('test'),
 };
