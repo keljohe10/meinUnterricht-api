@@ -81,5 +81,5 @@ $ yarn run test
 To know the test coverage the following command could be run
 
 ```
-$ yarn test -- --coverage
+$ yarn test --coverage
 ```
