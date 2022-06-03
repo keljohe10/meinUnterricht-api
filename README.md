@@ -77,3 +77,9 @@ Once you are there, you can use the following commands to run tests:
 ```
 $ yarn run test
 ```
+
+To know the test coverage the following command could be run
+
+```
+$ yarn test -- --coverage
+```
