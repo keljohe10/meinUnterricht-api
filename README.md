@@ -1,5 +1,5 @@
 # Node.js API meinunterricht
-## Stack
+# Architecture design
 
 This section is going to show a curated list of the packages and tools used for this project (to see
 the full list of dependencies take a look at `package.json`)
@@ -12,9 +12,19 @@ the full list of dependencies take a look at `package.json`)
 * [knex](http://knexjs.org/)
 * [Jest](https://jestjs.io/)
 * [PostgreSQL](https://www.postgresql.org/)
+* [Koa](https://koajs.com/)
 * [Docker](https://www.docker.com/)
-* [Docker Compose](https://docs.docker.com/compose/)
+* [Elasticsearch](https://www.elastic.co/)
 * [Git](https://git-scm.com/)
+
+
+# Approach
+
+A Restful API was developed with a single endpoint to retrieve all movies or movies filtered by a search parameter.
+
+The initial data will be uploaded to a relational database when executing the seed and is created from the API http://www.omdbapi.com/.
+
+For searches, the first request will get the movies in the database. Then the search text will be saved in elasticsearch as a keyword with the movies that matched. in this way, the searches are saved in elasticsearch, and it will not be necessary to go to the database again. This approach guarantees optimal API performance.
 
 # Start project
 
