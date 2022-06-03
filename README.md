@@ -1,4 +1,20 @@
 # Node.js API meinunterricht
+## Stack
+
+This section is going to show a curated list of the packages and tools used for this project (to see
+the full list of dependencies take a look at `package.json`)
+
+* [Koa](https://koajs.com/)
+* [Koa Router](https://github.com/koajs/router)
+* [Koa CORS](https://github.com/koajs/cors)
+* [Koa Bodyparser](https://github.com/koajs/bodyparser)
+* [Objection.js](https://vincit.github.io/objection.js/)
+* [knex](http://knexjs.org/)
+* [Jest](https://jestjs.io/)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/)
+* [Git](https://git-scm.com/)
 
 # Start project
 
